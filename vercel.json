@@ -1,9 +1,13 @@
 {
     "version": 2,
     "builds": [
-        {"src": "server.py", "use": "@vercel/python"}
+      {
+        "src": "server.py",
+        "use": "@vercel/python",
+        "config": { "runtime": "python3.9" }
+      }
     ],
     "routes": [
-        {"src": "/(.*)", "dest": "app.py"}
+      {"src": "/(.*)", "dest": "server.py"}
     ]
-}
+  }
