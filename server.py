@@ -1,13 +1,12 @@
 from flask import Flask, request, jsonify
-from joblib import load
+import joblib
 from sklearn.preprocessing import StandardScaler
-import numpy as np
-
-# Load the trained model``
-model = load("model.pkl")
-
 
 app = Flask(__name__)
+
+# Load the pre-fitted scaler
+scaler = joblib.load("scaler.pkl")
+model = joblib.load("model.pkl")
 
 @app.route("/predict", methods=["POST"])
 def predict():
@@ -20,11 +19,14 @@ def predict():
     weather = data["weather"]
     trip_duration = data["trip_duration"]
 
+    # Prepare the data for scaling
+    input_data = [[trip_distance, time_of_day, day_of_week, passenger_count, traffic_conditions, weather, trip_duration]]
+
+    # Scale the data
+    scaled_data = scaler.transform(input_data)
+
     # Make a prediction
-    Scaled_Data = [[trip_distance, time_of_day, day_of_week, passenger_count, traffic_conditions, weather, trip_duration]]
-    standardScalar = StandardScaler().fit(Scaled_Data)
-    user_input_scaled = standardScalar.transform(Scaled_Data)
-    prediction = model.predict(user_input_scaled)
+    prediction = model.predict(scaled_data)
     return jsonify({"fare": prediction[0]})
 
 if __name__ == "__main__":
