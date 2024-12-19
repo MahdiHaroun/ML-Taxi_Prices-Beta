@@ -1,12 +1,14 @@
 from flask import Flask, request, jsonify
-import joblib
+from joblib import load
+import numpy as np
 from sklearn.preprocessing import StandardScaler
+# Load the trained model
+model = load("model.pkl")
+
+# Load the scaler
+scaler = load("scaler2.pkl")
 
 app = Flask(__name__)
-
-# Load the pre-fitted scaler
-scaler = joblib.load("scaler.pkl")
-model = joblib.load("model.pkl")
 
 @app.route("/predict", methods=["POST"])
 def predict():
@@ -20,13 +22,20 @@ def predict():
     trip_duration = data["trip_duration"]
 
     # Prepare the data for scaling
-    input_data = [[trip_distance, time_of_day, day_of_week, passenger_count, traffic_conditions, weather, trip_duration]]
-
-    # Scale the data
-    scaled_data = scaler.transform(input_data)
-
+    Scaled_Data = [[trip_distance, time_of_day, day_of_week, passenger_count, traffic_conditions, weather, trip_duration]]
+    standardScalar = StandardScaler()
+    # Add debugging statements
+    print("Scaled_Data before transformation:", Scaled_Data)
+    
+    # Transform the input data using the loaded scaler
+    user_input_scaled = scaler.transform(Scaled_Data)
+    # user_input_scaled2 = standardScalar.transform(user_input_scaled)
+    # Add debugging statements
+    print("user_input_scaled after transformation:", user_input_scaled)
+    #print("user_input_scaled after transformation2:", user_input_scaled2)
+    
     # Make a prediction
-    prediction = model.predict(scaled_data)
+    prediction = model.predict(user_input_scaled)
     return jsonify({"fare": prediction[0]})
 
 if __name__ == "__main__":
