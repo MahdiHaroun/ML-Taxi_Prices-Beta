@@ -1,10 +1,11 @@
 from flask import Flask, request, jsonify
 from joblib import load
 from sklearn.preprocessing import StandardScaler
-# Load the trained model
+import numpy as np
+
+# Load the trained model``
 model = load("model.pkl")
-standardScalar = StandardScaler()
-model = load("model.pkl")
+
 
 app = Flask(__name__)
 
@@ -21,6 +22,7 @@ def predict():
 
     # Make a prediction
     Scaled_Data = [[trip_distance, time_of_day, day_of_week, passenger_count, traffic_conditions, weather, trip_duration]]
+    standardScalar = StandardScaler().fit(Scaled_Data)
     user_input_scaled = standardScalar.transform(Scaled_Data)
     prediction = model.predict(user_input_scaled)
     return jsonify({"fare": prediction[0]})
