@@ -80,7 +80,7 @@ The model used 80% of the data for training and 20% for testing. After training,
 
 ## Results and Discussion 🌟🔢🔎
 
-Results are detailed on line 62.
+Results are marked up on line 62.
 
 ---
 
