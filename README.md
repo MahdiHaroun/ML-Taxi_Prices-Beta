@@ -97,8 +97,8 @@ Kaggle Dataset: [Taxi Trip Pricing](https://www.kaggle.com/datasets/denkuznetz/t
 
 ## Starting the Server and The FrontEnd
 
-To start the Server , Run the [`server.py`](server.py)
-To start the FrontEnd , Run the following Commands : 
+- To start the Server , Run the [`server.py`](server.py)
+- To start the FrontEnd , Run the following Commands : 
 
 ```
 cd frontend
