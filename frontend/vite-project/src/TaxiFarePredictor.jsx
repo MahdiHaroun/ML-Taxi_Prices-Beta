@@ -47,7 +47,7 @@ const TaxiFarePredictor = () => {
       );
 
       // Set the predicted fare
-      setFare(response.data.fare);
+      setFare(response.data.Predicted_Trip_Price);
     } catch (error) {
       console.error("Error fetching fare:", error);
       setFare("An error occurred while calculating the fare.");

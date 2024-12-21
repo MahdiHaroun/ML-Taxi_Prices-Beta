@@ -8,9 +8,9 @@ model = load("model.pkl")
 
 # Load the scaler
 scaler = load("scaler2.pkl")
+app = Flask(__name__)
 # Apply CORS to allow all origins
 CORS(app)
-app = Flask(__name__)
 
 @app.route("/predict", methods=["POST"])
 def predict():
