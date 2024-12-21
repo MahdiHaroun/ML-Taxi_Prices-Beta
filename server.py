@@ -2,12 +2,14 @@ from flask import Flask, request, jsonify
 from joblib import load
 import numpy as np
 from sklearn.preprocessing import StandardScaler
+from flask_cors import CORS
 # Load the trained model
 model = load("model.pkl")
 
 # Load the scaler
 scaler = load("scaler2.pkl")
-
+# Apply CORS to allow all origins
+CORS(app)
 app = Flask(__name__)
 
 @app.route("/predict", methods=["POST"])
