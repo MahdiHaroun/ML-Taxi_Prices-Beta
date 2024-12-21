@@ -84,7 +84,7 @@ Results are detailed on line 62.
 
 ---
 
-## On Going Improvements 🌐🚀🔧
+## New Improvements 🌐🚀🔧
 
 The model has been integrated with an API and a backend server using **Postman** software. This allows for a user input system via a frontend site, enhancing usability.
 
