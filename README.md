@@ -95,3 +95,21 @@ The model has been integrated with an API and a backend server using **Postman**
 Kaggle Dataset: [Taxi Trip Pricing](https://www.kaggle.com/datasets/denkuznetz/taxi-price-prediction)
 
 
+## Starting the Server and The FrontEnd
+
+To start the Server , Run the [`server.py`](server.py)
+To start the FrontEnd , Run the following Commands : 
+
+```
+cd frontend
+```
+
+```
+cd .\vite-project\
+```
+
+```
+npm run dev
+```
+
+- Follow the Given link after ruuning the Commands 
