@@ -80,13 +80,13 @@ The model used 80% of the data for training and 20% for testing. After training,
 
 ## Results and Discussion 🌟🔢🔎
 
-Results are marked up on line 62.
+Results are marked up on ['The_Model'](The_Model.ipynb).
 
 ---
 
 ## New Improvements 🌐🚀🔧
 
-The model has been integrated with an API and a backend server using **Postman** software. This allows for a user input system via a frontend site, enhancing usability.
+The model has been integrated with an API and a backend server using [Postman] (https://www.https://www.postman.com/) software. This allows for a user input system via a frontend site, enhancing usability.
 
 ---
 
