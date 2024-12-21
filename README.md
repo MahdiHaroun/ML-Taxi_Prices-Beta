@@ -1,4 +1,4 @@
-# The Taxi Trip Price Predictor Model
+# The Taxi_Fare_Predictor Model
 
 By Mahdi M. Haroun, University of Jordan, ID 0228222  
 Project Related to Machine Learning with Python  

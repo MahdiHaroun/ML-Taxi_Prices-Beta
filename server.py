@@ -3,12 +3,12 @@ from joblib import load
 import numpy as np
 from sklearn.preprocessing import StandardScaler
 from flask_cors import CORS
-# Load the trained model
+
 model = load("model.pkl")
 
-# Load the scaler
+
 scaler = load("scaler2.pkl")
-# Apply CORS to allow all origins
+
 
 app = Flask(__name__)
 CORS(app)
@@ -36,7 +36,11 @@ def predict():
     
     
     prediction = model.predict(user_input_scaled)
-    return jsonify({"Predicted_Trip_Price": prediction[0]})
+    return jsonify({"Predicted_Trip_Price": round(prediction[0], 2)})
 
 if __name__ == "__main__":
     app.run(debug=True)
+
+
+    #run frontend:
+    #cd frontend , cd v(tab) , npm run dev 
