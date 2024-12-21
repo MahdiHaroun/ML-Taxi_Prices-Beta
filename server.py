@@ -1,17 +1,16 @@
 from flask import Flask, request, jsonify
-from flask_cors import CORS
 from joblib import load
 import numpy as np
 from sklearn.preprocessing import StandardScaler
+from flask_cors import CORS
+# Load the trained model
+model = load("model.pkl")
 
-# Load the trained model and scaler
-model = load("model2.pkl")
+# Load the scaler
 scaler = load("scaler2.pkl")
-
-app = Flask(__name__)
-
 # Apply CORS to allow all origins
 CORS(app)
+app = Flask(__name__)
 
 @app.route("/predict", methods=["POST"])
 def predict():
@@ -24,13 +23,20 @@ def predict():
     weather = data["weather"]
     trip_duration = data["trip_duration"]
 
-    # Prepare the data for scaling
-    Scaled_Data = [[trip_distance, time_of_day, day_of_week, passenger_count, traffic_conditions, weather, trip_duration]]
-    user_input_scaled = scaler.transform(Scaled_Data)
     
-    # Make a prediction
+    Scaled_Data = [[trip_distance, time_of_day, day_of_week, passenger_count, traffic_conditions, weather, trip_duration]]
+    standardScalar = StandardScaler()
+    
+    print("Scaled_Data before transformation:", Scaled_Data)
+    
+   
+    user_input_scaled = scaler.transform(Scaled_Data)
+    print("user_input_scaled after transformation:", user_input_scaled)
+    
+    
+    
     prediction = model.predict(user_input_scaled)
-    return jsonify({"fare": prediction[0]})
+    return jsonify({"Predicted_Trip_Price": prediction[0]})
 
 if __name__ == "__main__":
     app.run(debug=True)
