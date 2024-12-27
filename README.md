@@ -1,6 +1,11 @@
 # The Taxi_Fare_Predictor Model
 
-By Mahdi M. Haroun, University of Jordan, ID 0228222  
+By 
+Mahdi M. Haroun ID 0228222  
+Hamzeh A. Samour ID 2221066
+Abdel Rahman M. Shahwan ID 0225293
+Zakaria M. Alnabulsia  ID 2221175
+Karam M. immjalli  ID 2214067
 Project Related to Machine Learning with Python  
 Date of Publish: 20th of Dec, 2024
 
