@@ -28,7 +28,8 @@ This project was created from scratch using a CSV data file from Kaggle.com (htt
 
 ## Data Preprocessing 📈🔧🌍
 
-Three unnecessary columns were dropped.  
+Three unnecessary columns were dropped. 
+
 Ordinal features were encoded using a mapper for the following columns:
 - **Traffic Condition**  
 - **Weather**  
@@ -98,6 +99,7 @@ The model has been integrated with an API and a backend server using **Postman**
 ## References 🔍📑🌐
 
 Kaggle Dataset: [Taxi Trip Pricing](https://www.kaggle.com/datasets/denkuznetz/taxi-price-prediction)
+
 
 
 ## Starting the Server and The FrontEnd
