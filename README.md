@@ -8,6 +8,9 @@ Zakaria M. Alnabulsia  ID 2221175
 Karam M. immjalli  ID 2214067
 Project Related to Machine Learning with Python  
 Date of Publish: 20th of Dec, 2024
+Meetings together : 
+At Uinversity : 24/12/2024 , 26/12/2024
+Teams " Online " : 27/12/2024 . 28/12/2024
 
 ---
 
