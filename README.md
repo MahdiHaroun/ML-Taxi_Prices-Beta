@@ -1,16 +1,9 @@
 # The Taxi_Fare_Predictor Model
 
-By 
-Mahdi M. Haroun ID 0228222  
-Hamzeh A. Samour ID 2221066
-Abdel Rahman M. Shahwan ID 0225293
-Zakaria M. Alnabulsia  ID 2221175
-Karam M. immjalli  ID 2214067
+By Mahdi M. Haroun ID 0228222  
 Project Related to Machine Learning with Python  
 Date of Publish: 20th of Dec, 2024
-Meetings together : 
-At Uinversity : 24/12/2024 , 26/12/2024
-Teams " Online " : 27/12/2024 . 28/12/2024
+
 
 ---
 
@@ -122,4 +115,4 @@ cd .\vite-project\
 npm run dev
 ```
 
-- Follow the Given link after ruuning the Commands 
+- Follow the Given link after running the Commands 
